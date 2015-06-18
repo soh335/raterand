@@ -1,3 +1,5 @@
+[![wercker status](https://app.wercker.com/status/27c5ed60aad9aa26717661e1b4c5c9b6/s/master "wercker status")](https://app.wercker.com/project/bykey/27c5ed60aad9aa26717661e1b4c5c9b6)
+
 # raterand
 
 ## DESCRIPTION
