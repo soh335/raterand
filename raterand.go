@@ -14,10 +14,8 @@ type Choice struct {
 	Item   Item
 }
 
-func NewRateRand(r *rand.Rand) *RateRand {
-	return &RateRand{
-		Rand: r,
-	}
+func NewRateRand() *RateRand {
+	return &RateRand{}
 }
 
 type RateRand struct {
@@ -36,10 +34,14 @@ func (r *RateRand) Generate() Generator {
 	}
 
 	choices := r.choices
-	_r := r.Rand
+
+	randomFloat := rand.Float64
+	if r.Rand != nil {
+		randomFloat = r.Rand.Float64
+	}
 
 	return func() Item {
-		index := _r.Float64() * max
+		index := randomFloat() * max
 		var cursor float64
 
 		for _, choice := range choices {
